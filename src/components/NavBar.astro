@@ -1,0 +1,38 @@
+<nav class='menu-nav'>
+    <ul class='lista-menu'>
+        <li>
+            <a href='#'>Inicio</a>
+        </li>
+        <li>
+            <a href='#'>Pedidos</a>
+        </li>
+        <li>
+            <a href='#'>Carrito</a>
+        </li>            
+    </ul>
+    <div>
+        <a href='#'>Login</a>
+    </div>
+</nav>
+
+<style>
+    .menu-nav {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        background-color: var(--primary);
+        border-radius: 1rem;
+        padding: 1rem;
+
+        font-weight: 900;  
+    }
+    .lista-menu {
+        display: flex;
+        gap: 1rem;
+        /* Quitar los estilos por defecto de la lista */
+        list-style: none;    
+        color: inherit;
+        font-size: inherit;
+        font-style: inherit;
+    }
+</style>

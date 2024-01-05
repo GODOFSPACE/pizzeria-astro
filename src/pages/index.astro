@@ -1,16 +1,67 @@
 ---
+import Layout from "../components/Layout.astro"
+import Card from "../components/Card.astro"
 
+const cards: Array<{ title: string; description: string }> = [
+	{
+		title: "Pizza Margherita",
+		description: "Tomato sauce, mozzarella, and oregano",
+	},
+	{
+		title: "Pizza Marinara",
+		description: "Tomato sauce, garlic and basil",
+	},
+	{
+		title: "Pizza Quattro Stagioni",
+		description: "Tomato sauce, mozzarella, mushrooms, ham, artichokes, olives, and oregano",
+	},
+	{
+		title: "Pizza Vegetariana",
+		description: "Tomato sauce, mozzarella and vegetables (fresh mushrooms, onions, peppers and tomatoes)",
+	},
+	{
+		title: "Pizza Napoletana",
+		description: "Tomato sauce, mozzarella, oregano, anchovies",
+	},
+	{
+		title: "Pizza Capricciosa",
+		description: "Tomato sauce, mozzarella, mushrooms, ham, artichokes, olives, and oregano",
+	},
+	{
+		title: "Pizza Crudo",
+		description: "Tomato sauce, mozzarella and Parma ham",
+	},
+	{
+		title: "Pizza Pugliese",
+		description: "Tomato sauce, mozzarella, oregano, and onions",
+	},
+	{
+		title: "Pizza Montanara",
+		description: "Tomato sauce, mozzarella, mushrooms, pepperoni, and potatoes",
+	},
+	{
+		title: "Pizza Emilia",
+		description: "Tomato sauce, mozzarella, eggs, and bacon",
+	},
+]
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Pizzeria">
+	<main>
+		<Card title="Hola" description="descripcion"/>
+		<!-- {
+			cards.map(({ title, description}) => {
+				return <Card title={title} description={description} />
+			})
+		} -->
+	</main>
+</Layout>
+
+<style>
+	main {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		padding: 1rem;
+		grid-gap: 1rem;
+	}
+</style>

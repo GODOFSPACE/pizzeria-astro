@@ -1,0 +1,140 @@
+---
+import NavBar from '../components/NavBar.astro'
+
+interface Props {
+    title: string;
+    description: string;
+}
+const {title, description} = Astro.props;
+---
+
+<section class="card">
+    <header>
+        <h1>{title}</h1>
+    </header>
+    <picture>
+        <img
+            src="https://selecciones.com.mx/wp-content/uploads/2022/02/recetas-de-pizzas-amigables-con-el-planeta.jpg"
+            alt="Imagen"
+        >
+    </picture>
+    <p class="descripcion">{description}</p>
+    <div class="chips">
+        <button class="chip selected">ch</button>
+        <button class="chip">m</button>
+        <button class="chip">g</button>
+        <button class="chip">f</button>
+    </div>
+    <footer>
+        <div class="price">Precio: <span>$185</span></div>
+        <button class="btn-card">Eliminar</button>
+    </footer>
+</section>
+
+<style>
+    span {
+        color: var(--secondary);
+    }
+
+    footer {
+        display: flex;        
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 1rem;
+        gap: 0.5rem;
+        width: 100%;
+        font-weight: 600;
+    }
+
+    .chips {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .chip {    
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: inherit;
+        font-family: inherit;
+        background-color: var(--primary);
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .selected {
+        background-color: var(--secondary);
+        color: var(--primary);
+    }
+
+    button {
+        border: none;
+        border-radius: 1rem;
+        padding: 0.5rem;
+        font-size: inherit;
+        font-family: inherit;
+        background-color: var(--primary);
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);
+        font-weight: 600;
+        transition: all 0.2s ease-in;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    h1{
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--secondary);
+    }
+    .iconos {
+        display: flex;
+        gap: 0.5rem;
+    }
+    .ingredientes {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    label {
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .descripcion{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+        width: 100%;     
+    }
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+        width: 100%;
+        background: #e0ecec;
+        border-radius: 1rem;
+        padding: 1rem; 
+        transition: all 0.2s ease-in;
+    }
+
+    .card:hover {
+        box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
+        transform: scale(1.01);
+        cursor: pointer;
+    }
+    
+    picture {
+        width: 100%;
+    }
+    img {
+        width: 100%;
+        border-radius: 1rem;
+    }
+</style>
