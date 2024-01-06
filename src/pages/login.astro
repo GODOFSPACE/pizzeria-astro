@@ -1,0 +1,42 @@
+---
+import Layout from "../components/Layout.astro"
+import Form from "../components/Form.astro"
+import SignUpForm from "../components/SignUpForm.astro"
+
+---
+
+<Layout title="Login">
+    <main>
+        <div class="login-container">
+            <h1>Login</h1>
+            <Form onSubmit={() => alert("Login submitted")} onSignUpClick={() => alert("Sign Up clicked")} />
+            <p>Don't have an account? <a href="signup#" on:click={() => alert("Sign Up clicked")}>Sign Up</a></p>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .login-container {
+        text-align: center;
+        max-width: 400px;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--secondary);
+    }
+    a {
+        color: var(--secondary);
+        text-decoration: underline;
+        cursor: pointer;
+    }
+</style>
