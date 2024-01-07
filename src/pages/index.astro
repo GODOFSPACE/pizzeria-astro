@@ -4,56 +4,41 @@ import Card from "../components/Card.astro"
 
 const cards: Array<{ title: string; description: string }> = [
 	{
-		title: "Pizza Margherita",
-		description: "Tomato sauce, mozzarella, and oregano",
+		title: "Pepperoni",
+		description: "La pizza de pepperoni es un clásico amado universalmente. Se caracteriza por su generosa cobertura de pepperoni, que es un tipo de salami picante y ligeramente ahumado. Este embutido se coloca sobre una capa de queso mozzarella fundido y una base de salsa de tomate rica y sabrosa. La masa puede variar de fina y crujiente a gruesa y esponjosa, dependiendo del estilo. El pepperoni, al cocinarse, libera aceites que se mezclan con el queso, creando un sabor distintivo y delicioso.",
 	},
 	{
-		title: "Pizza Marinara",
-		description: "Tomato sauce, garlic and basil",
+		title: "4 Quesos",
+		description: "Es una mezcla de cuatro tipos diferentes de quesos, comúnmente mozzarella, queso azul, parmesano y gorgonzola o algún otro queso suave. Esta pizza es un paraíso para los amantes del queso, ofreciendo una rica y compleja combinación de sabores y texturas. La base de salsa de tomate es opcional en esta pizza, ya que el protagonismo lo tienen los quesos que se funden para formar una capa cremosa y aromática.",
 	},
 	{
-		title: "Pizza Quattro Stagioni",
-		description: "Tomato sauce, mozzarella, mushrooms, ham, artichokes, olives, and oregano",
+		title: "Champiñones",
+		description: "Esta pizza presenta champiñones frescos o sazonados como ingrediente principal. Los champiñones se distribuyen sobre una capa de queso mozzarella y salsa de tomate. Pueden utilizarse diferentes tipos de champiñones, como los blancos o portobello, y a menudo se complementan con ajo, cebolla y hierbas para realzar su sabor. La textura de los champiñones, junto con el queso derretido y la masa crujiente, hace de esta pizza una opción deliciosa y popular.",
 	},
 	{
-		title: "Pizza Vegetariana",
-		description: "Tomato sauce, mozzarella and vegetables (fresh mushrooms, onions, peppers and tomatoes)",
+		title: "Hawaiana",
+		description: "La pizza hawaiana es conocida por su distintiva combinación de sabores dulces y salados. Los ingredientes principales son trozos de piña y jamón, dispuestos sobre una base de salsa de tomate y cubiertos con queso mozzarella. La piña aporta un dulzor jugoso que contrasta con el sabor más salado y rico del jamón, creando una experiencia de sabor única. A menudo es un tema de debate entre los entusiastas de la pizza, pero sigue siendo una opción popular en muchos menús.",
 	},
 	{
-		title: "Pizza Napoletana",
-		description: "Tomato sauce, mozzarella, oregano, anchovies",
+		title: "Canes Frias",
+		description: "Es una deliciosa combinación de diversas carnes frías, como salami, jamón, chorizo y a veces pepperoni. Se sirve sobre una base de salsa de tomate y queso mozzarella. Cada tipo de carne aporta su propio sabor y textura únicos, desde el picante del chorizo hasta el sabor suave y ahumado del jamón. Esta pizza es ideal para quienes aman una opción rica en proteínas y llena de sabor.",
 	},
 	{
-		title: "Pizza Capricciosa",
-		description: "Tomato sauce, mozzarella, mushrooms, ham, artichokes, olives, and oregano",
+		title: "Mexicana",
+		description: "Incorpora sabores inspirados en la cocina mexicana. Puede incluir ingredientes como jalapeños, carne de res o pollo sazonado, cebollas, pimientos y a veces maíz o frijoles negros. Se cubre con una mezcla de quesos, que podría incluir queso cheddar o Monterey Jack además de mozzarella. Esta pizza es conocida por su perfil de sabor picante y abundancia de ingredientes frescos y sabrosos.",
 	},
-	{
-		title: "Pizza Crudo",
-		description: "Tomato sauce, mozzarella and Parma ham",
-	},
-	{
-		title: "Pizza Pugliese",
-		description: "Tomato sauce, mozzarella, oregano, and onions",
-	},
-	{
-		title: "Pizza Montanara",
-		description: "Tomato sauce, mozzarella, mushrooms, pepperoni, and potatoes",
-	},
-	{
-		title: "Pizza Emilia",
-		description: "Tomato sauce, mozzarella, eggs, and bacon",
-	},
+	
 ]
 ---
 
 <Layout title="Pizzeria">
 	<main>
 		<Card title="Hola" description="descripcion"/>
-		<!-- {
+		{
 			cards.map(({ title, description}) => {
 				return <Card title={title} description={description} />
 			})
-		} -->
+		}
 	</main>
 </Layout>
 

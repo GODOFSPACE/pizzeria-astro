@@ -6,16 +6,17 @@ interface Props {
 const { onSubmit } = Astro.props;
 
 ---
-
+<section class="card">
 <form class="login-form" on:submit={onSubmit}>
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required />
-
+    
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required />
 
     <button type="submit" class="btn-login">Login</button>
 </form>
+</section>
 
 <style>
     .login-form {
@@ -53,5 +54,17 @@ const { onSubmit } = Astro.props;
     button:hover {
         cursor: pointer;
         background-color: var(--secondary);
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+        width: 100%;
+        background: #e0ecec;
+        border-radius: 1rem;
+        padding: 1rem; 
+        transition: all 0.2s ease-in;
     }
 </style>

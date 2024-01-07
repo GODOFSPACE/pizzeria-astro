@@ -14,27 +14,37 @@ interface Props {
             </h1>
             <picture>
                 <img
-                src="https://selecciones.com.mx/wp-content/uploads/2022/02/recetas-de-pizzas-amigables-con-el-planeta.jpg"
-                alt="Random image"                
+                    src="https://selecciones.com.mx/wp-content/uploads/2022/02/recetas-de-pizzas-amigables-con-el-planeta.jpg"
+                    alt="Random image"
                 />
             </picture>
         </header>
-        <p>Tomato sauce, garlic and basil</p>
         <section>
+            <p>Tomato sauce, garlic and basil</p>
             <div class="chips">
                 <button class="chip selected">ch</button>
                 <button class="chip">m</button>
                 <button class="chip">g</button>
                 <button class="chip">f</button>
             </div>
-        </section>
-        <section>
-            <button>Agregar al carrito</button>
+            <footer>
+                <button>Agregar al carrito</button>
+            </footer>
         </section>
     </main>
 </Layout>
 
 <style>
+    section {
+        background-color: #e0ecec;
+        padding: 10px;
+        border-radius: 1rem;        
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
     span {
         color: var(--secondary);
     }
