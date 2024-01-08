@@ -2,6 +2,7 @@
 import Layout from "../components/Layout.astro"
 import Form from "../components/Form.astro"
 import SignUpForm from "../components/SignUpForm.astro"
+import LoginForm from "../components/LoginForm"
 
 ---
 
@@ -9,8 +10,8 @@ import SignUpForm from "../components/SignUpForm.astro"
     <main>
         <div class="login-container">
             <h1>Login</h1>
-            <Form onSubmit={() => alert("Login submitted")} onSignUpClick={() => alert("Sign Up clicked")} />
-            <p>Don't have an account? <a href="/signup" on:click={() => alert("Sign Up clicked")}>Sign Up</a></p>
+            <LoginForm client:visible/>
+            <p>Don't have an account? <a href="/signup">Sign Up</a></p>
         </div>
     </main>
 </Layout>

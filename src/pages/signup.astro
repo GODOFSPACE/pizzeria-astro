@@ -1,6 +1,7 @@
 ---
 import Layout from "../components/Layout.astro"
 import SignUpForm from "../components/SignUpForm.astro"
+import SignUp from "../components/SignUp"
 
 ---
 
@@ -8,7 +9,7 @@ import SignUpForm from "../components/SignUpForm.astro"
     <main>
         <div class="signup-container">
             <h1>Sign Up</h1>
-            <SignUpForm onSignUp={() => alert("Sign Up submitted")} />
+            <SignUp client:visible />
             <p>Already have an account? <a href="/login">Login</a></p>
         </div>
     </main>

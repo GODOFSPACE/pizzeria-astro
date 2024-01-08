@@ -2,32 +2,51 @@
 import NavBar from '../components/NavBar.astro'
 
 interface Props {
-    title: string;
-    description: string;
+    pizza:string,
+    size:string,
+    type:string,
+    price:string,
+    number:string,
+
 }
-const {title, description} = Astro.props;
+const {pizza,size,type,price,number} = Astro.props;
+
+const carrito = [
+    {
+        price: 185
+    },
+    {
+        price: 185
+    },
+    {
+        price: 185
+    },
+    {
+        price: 185
+    }
+]
+
+
 ---
 
 <section class="card">
     <header>
-        <h1>{title}</h1>
+        <h1>{pizza}</h1>
     </header>
     <picture>
         <img
             src="https://selecciones.com.mx/wp-content/uploads/2022/02/recetas-de-pizzas-amigables-con-el-planeta.jpg"
             alt="Imagen"
         >
-    </picture>
-    <p class="descripcion">{description}</p>
+    </picture>    
     <div class="chips">
         <button class="chip selected">ch</button>
-        <button class="chip">m</button>
-        <button class="chip">g</button>
-        <button class="chip">f</button>
+        <button class="chip-large selected">Normal</button>
     </div>
     <footer>
         <div class="price">Precio: <span>$185</span></div>
-        <button class="btn-card">Delet</button>
+        <div class="">cantidad: 1</div>
+        <button class="btn-card">Delete</button>
     </footer>
 </section>
 
@@ -35,7 +54,6 @@ const {title, description} = Astro.props;
     span {
         color: var(--secondary);
     }
-
     footer {
         display: flex;        
         justify-content: space-around;
@@ -61,8 +79,7 @@ const {title, description} = Astro.props;
         height: 40px;
         font-size: inherit;
         font-family: inherit;
-        background-color: var(--primary);
-        font-size: 12px;
+        background-color: var(--primary);        
         font-weight: 600;
     }
 
@@ -120,14 +137,7 @@ const {title, description} = Astro.props;
         width: 100%;
         background: #e0ecec;
         border-radius: 1rem;
-        padding: 1rem; 
-        transition: all 0.2s ease-in;
-    }
-
-    .card:hover {
-        box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
-        transform: scale(1.01);
-        cursor: pointer;
+        padding: 1rem;       
     }
     
     picture {

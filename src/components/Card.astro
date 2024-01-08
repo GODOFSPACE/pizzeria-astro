@@ -4,22 +4,26 @@
     interface Props {
         title: string;
         description: string;
+        url: string;
+        img: string;
     }
-    const {title, description} = Astro.props;
+    const {title, description, url, img} = Astro.props;
 ---
 
-<a href="detalles" class="card">
+<a href={url} class="card">
     <header>
-        <h1>{title}</h1>
+        <h1>{title}</h1>   
     </header>
-    <picture>
         <img
-            src="https://selecciones.com.mx/wp-content/uploads/2022/02/recetas-de-pizzas-amigables-con-el-planeta.jpg"
-            alt="Imagen"
+            src={img}
+            alt={title}
         >
+    <picture>
     </picture>
+    
     <p class="descripcion">{description}</p>
-    <div class="chips">
+
+    <!-- <div class="chips">
         <button class="chip selected">ch</button>
         <button class="chip">m</button>
         <button class="chip">g</button>
@@ -28,7 +32,7 @@
     <footer>
         <div class="price">Precio: <span>$185</span></div>
         <button class="btn-card">Añadir al carrito</button>
-    </footer>
+    </footer> -->
 </a>
 
 <style>
