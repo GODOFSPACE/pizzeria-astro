@@ -27,7 +27,7 @@ const {title, description, image } = Astro.props;
         <section>
             <p>{description}</p>
             <label>Ingredients: Tomato sauce, pepperoni, and oregano</label>
-            <Formulario client:visible pizza="Pepperoni"/>
+            <Formulario client:visible pizza={title}/>
         </section>
     </main>
 </Layout>

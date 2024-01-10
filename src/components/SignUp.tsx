@@ -35,6 +35,18 @@ function SignUpForm() {
                 'Content-Type': 'application/json',
             },
         });
+        var enlace = document.createElement('a');
+        // Establecer el href del enlace
+        enlace.href = "/login";
+
+        // (Opcional) Ocultar el enlace para que no altere tu layout
+        enlace.style.display = 'none';
+
+        // Agregar el enlace al cuerpo del documento
+        document.body.appendChild(enlace);
+
+        // Simular un clic en el enlace
+        enlace.click();
     };
 
     return (
@@ -42,15 +54,20 @@ function SignUpForm() {
             <form className="login-form" onSubmit={handleSubmit}>
                 <label htmlFor="name">Username:</label>
                 <input type="text" id="name" name="username" value={username} onChange={handleUsernameChange} required />
+                
                 <label htmlFor="password">Password:</label>
                 <input type="password" id="password" name="password" value={password}  onChange={handlePasswordChange} required />
+                
                 <label htmlFor="direction">Address</label>
                 <label htmlFor="colonia">Colony:</label>
                 <input type="text" id="colonia" name="colonia" value={colonia}  onChange={handleColoniaChange} required />
+                
                 <label htmlFor="codigoPostal">Postal Code:</label>
                 <input type="text" id="codigoPostal" name="codigoPostal" value={codigoPostal}  onChange={handleCodigoPostalChange} required />
+                
                 <label htmlFor="municipio">Municipality</label>
                 <input type="text" id="municipio" name="municipio" value={municipio}  onChange={handleMunicipioChange} required />
+                
                 <button type="submit" className="btn-login">SignUp</button>
             </form>
         </section>

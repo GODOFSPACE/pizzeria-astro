@@ -5,8 +5,8 @@ interface Props {
     pizza:string,
     size:string,
     type:string,
-    price:string,
-    number:string,
+    price:number,
+    number:number,
 
 }
 const {pizza,size,type,price,number} = Astro.props;

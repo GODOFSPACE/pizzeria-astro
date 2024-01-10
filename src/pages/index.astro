@@ -1,6 +1,7 @@
 ---
 import Layout from "../components/Layout.astro"
 import Card from "../components/Card.astro"
+import Bienvenida from "../components/Bienvenida";
 
 const cards: Array<{title: string, description: string, url: string, img: string}> = [
 	{
@@ -44,6 +45,7 @@ const cards: Array<{title: string, description: string, url: string, img: string
 ---
 
 <Layout title="Pizzeria">
+	<Bienvenida client:visible/>
 	<main>			
 		{
 			cards.map(({ title, description, url, img }) => {

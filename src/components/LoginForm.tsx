@@ -1,9 +1,12 @@
 import '../styles/login.css';
 import { useState } from 'react';
+import { useStore } from '@nanostores/react';
+import { isLogin, userName } from '../stores/userLogin';
 
 function LoginForm() {    
 
-    
+    const $isLogin = useStore(isLogin);
+    const $userName = useStore(userName);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -19,7 +22,7 @@ function LoginForm() {
         event.preventDefault();        
         console.log('Login con:', username, password);
         const response = await fetch(`http://localhost:8080/prueba/login.jsp?user=${username}&password=${password}`, {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -28,23 +31,25 @@ function LoginForm() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
     
-        const data = await response.json(); // Suponiendo que el servidor responde con JSON
+        const data = await response.json();
     
         // Aquí puedes trabajar con 'data', que es la respuesta en formato JSON
         if(data.login){
-            
-            // Encode value in order to escape semicolons, commas, and whitespace
-            var cookie = "auth =" + encodeURIComponent(true);
-            if (typeof 7 === "number") {
-                cookie += "; max-age=" + (7*24*60*60);
-                cookie += "; path=/";
-                document.cookie = cookie;
-            }
-            cookie = "user =" + encodeURIComponent(username);
-            document.cookie = cookie;
-            
             // Uso
-            window.location.href = '/';
+            isLogin.set(true);
+            userName.set(username);
+            var enlace = document.createElement('a');
+            // Establecer el href del enlace
+            enlace.href = "/";
+
+            // (Opcional) Ocultar el enlace para que no altere tu layout
+            enlace.style.display = 'none';
+
+            // Agregar el enlace al cuerpo del documento
+            document.body.appendChild(enlace);
+
+            // Simular un clic en el enlace
+            enlace.click();              
         }
     };
 

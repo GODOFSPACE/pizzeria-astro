@@ -1,11 +1,14 @@
 import '../styles/Formulario.css';
 import { useEffect, useState } from 'react';
+import { useStore } from '@nanostores/react';
+import { userName } from '../stores/userLogin';
 
 interface Props {
     pizza: string;
 }
 
 function Formulario({pizza}: Props) {
+    const $user = useStore(userName);
     const [size, setSize] = useState<string>("ch");
     const [type, setType] = useState<string>("Normal");
     const [price, setPrice] = useState<number>(150);
@@ -19,15 +22,27 @@ function Formulario({pizza}: Props) {
     };
 
     const sendToCart = () => {
-        const pizzaObject = {
-            pizza,
-            size,
-            type,
-            price,
-            number
-        };
-        console.log(pizzaObject);
+        fetch(
+            `http://localhost:8080/prueba/carrito.jsp?number=${number}&pizza=${pizza}&price=${price}&size=${size}&type=${type}&user="${$user}"`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        var enlace = document.createElement('a');
+        // Establecer el href del enlace
+        enlace.href = "/";
+
+        // (Opcional) Ocultar el enlace para que no altere tu layout
+        enlace.style.display = 'none';
+
+        // Agregar el enlace al cuerpo del documento
+        document.body.appendChild(enlace);
+
+        // Simular un clic en el enlace
+        enlace.click();
     }
+
 
     useEffect(() => {
         let priceAux = 150;

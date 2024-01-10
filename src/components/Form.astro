@@ -1,13 +1,5 @@
----
-interface Props {
-    onSubmit: () => void;
-}
-
-const { onSubmit } = Astro.props;
-
----
 <section class="card">
-<form class="login-form" on:submit={onSubmit}>
+<form class="login-form">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required />
     

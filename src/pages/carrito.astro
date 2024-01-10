@@ -1,62 +1,11 @@
 ---
 import Layout from "../components/Layout.astro"
-import CardCarrito from "../components/CardCarrito.astro"
 import Pay from "../components/Pay";
-
-const cardsCarrito: Array<{ title: string; description: string }> = [
-	{
-		title: "Pizza Margherita",
-		description: "Tomato sauce, mozzarella, and oregano",
-	},
-	{
-		title: "Pizza Marinara",
-		description: "Tomato sauce, garlic and basil",
-	},
-	{
-		title: "Pizza Quattro Stagioni",
-		description: "Tomato sauce, mozzarella, mushrooms, ham, artichokes, olives, and oregano",
-	},
-	
-]
-const carrito = [
-    {
-        price: 185
-    },
-    {
-        price: 185
-    },
-    {
-        price: 185
-    },
-    {
-        price: 185
-    }
-]
+import GetCarrito from "../components/GetCarrito";
 ---
 
 <Layout title="Carrito">
-    <main>
-         <div class="productos">
-            {cardsCarrito.map(({ title, description }) => (
-                <CardCarrito
-                    title={title}
-                    description={description}
-                />
-            ))}
-        </div>
-        </div>
-        <div class="precio">
-            <header>
-                <h1>Total to pay</h1>
-                <h2>$</h2>
-                <h1>Payment method</h1>
-                <h1>Address</h1>
-            </header>
-            <div class="container">
-            <button class="btn-pagar">Buy</button>
-            </div>
-        </div>
-	</main>
+    <GetCarrito client:load/>
 </Layout>
 
 <style>
