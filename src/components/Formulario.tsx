@@ -5,9 +5,10 @@ import { userName } from '../stores/userLogin';
 
 interface Props {
     pizza: string;
+    img: string;
 }
 
-function Formulario({pizza}: Props) {
+function Formulario({pizza,img}: Props) {
     const $user = useStore(userName);
     const [size, setSize] = useState<string>("ch");
     const [type, setType] = useState<string>("Normal");
@@ -23,7 +24,7 @@ function Formulario({pizza}: Props) {
 
     const sendToCart = () => {
         fetch(
-            `http://localhost:8080/prueba/carrito.jsp?number=${number}&pizza=${pizza}&price=${price}&size=${size}&type=${type}&user="${$user}"`, {
+            `http://localhost:8080/prueba/carrito.jsp?number=${number}&pizza=${pizza}&price=${price}&size=${size}&type=${type}&user=${$user}&img=${img}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

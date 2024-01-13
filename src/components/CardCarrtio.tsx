@@ -5,11 +5,12 @@ interface Props {
     type:string,
     price:number,
     number:number,
+    img:string,
 
 }
 import '../styles/cardCarrito.css';
-function CardCarrito({id, pizza, size, type, price, number}:Props) {
-
+function CardCarrito({id, pizza, size, type, price, number,img}:Props) {
+    console.log(img)
     const deletePizza = () => {
         fetch(
             `http://localhost:8080/prueba/delete.jsp?id=${id}`, {
@@ -27,7 +28,7 @@ function CardCarrito({id, pizza, size, type, price, number}:Props) {
             </header>
             <picture>
                 <img
-                    src="https://selecciones.com.mx/wp-content/uploads/2022/02/recetas-de-pizzas-amigables-con-el-planeta.jpg"
+                    src={img}
                     alt="Imagen"
                 />
             </picture>    

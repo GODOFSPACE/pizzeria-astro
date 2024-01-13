@@ -12,6 +12,7 @@ interface Product {
     price: number;
     number: number;
     id: number;
+    img: string;
 }
 
 function GetCarrito() {
@@ -23,7 +24,7 @@ function GetCarrito() {
     }, [])
     const obtenerCarrito = async() => {
         const res = await fetch(
-            `http://localhost:8080/prueba/carrito.jsp?user="${$user}"`, {
+            `http://localhost:8080/prueba/carrito.jsp?user=${$user}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -55,6 +56,7 @@ function GetCarrito() {
                             type={product.type}
                             price={product.price}
                             number={product.number}
+                            img={product.img}
                         ></CardCarrito>
                     ))
                 }
