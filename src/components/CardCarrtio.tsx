@@ -19,6 +19,19 @@ function CardCarrito({id, pizza, size, type, price, number,img}:Props) {
                 'Content-Type': 'application/json',
             },
         });
+
+        var enlace = document.createElement('a');
+        // Establecer el href del enlace
+        enlace.href = "/";
+
+        // (Opcional) Ocultar el enlace para que no altere tu layout
+        enlace.style.display = 'none';
+
+        // Agregar el enlace al cuerpo del documento
+        document.body.appendChild(enlace);
+
+        // Simular un clic en el enlace
+        enlace.click();
     }
 
     return (

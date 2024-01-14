@@ -58,8 +58,10 @@ function LoginForm() {
             <form className="login-form" onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
                 <input type="text" id="username" name="username" value={username} onChange={handleUsernameChange} required />
+
                 <label htmlFor="password">Password:</label>
                 <input type="password" id="password" name="password" value={password}  onChange={handlePasswordChange} required />
+                
                 <button type="submit" className="btn-login">Login</button>
             </form>
         </section>
