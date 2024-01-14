@@ -1,3 +1,4 @@
+import '../styles/cardCarrito.css';
 interface Props {
     id:number;
     pizza:string,
@@ -8,7 +9,6 @@ interface Props {
     img:string,
 
 }
-import '../styles/cardCarrito.css';
 function CardCarrito({id, pizza, size, type, price, number,img}:Props) {
     console.log(img)
     const deletePizza = () => {
